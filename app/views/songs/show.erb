@@ -9,9 +9,9 @@
 				</div>
 				<div class="col-md-8">
 					<div class="card-body">
-						<h5 class="card-title"><%= @song.name %></h5>
+						<h5 class="card-title">"<%= @song.name %>"</h5>
 <!-- 						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-						<p class="card-text"><small class="text-muted"><%= @song.artist.name %> // <%= @genres.each.collect {|genre| genre.name.capitalize}.join(", ") %></small></p>
+						<p class="card-text"><small class="text-muted"><a href="/artists/<%= @song.artist.slug %>"><%= @song.artist.name %></a> // <%= @genres.each.collect {|genre| genre.name.capitalize}.join(", ") %></small></p>
 						<a href="/songs/<%= @song.slug %>/edit" class="btn btn-secondary btn-sm">Edit Song</a>
 					</div>
 				</div>

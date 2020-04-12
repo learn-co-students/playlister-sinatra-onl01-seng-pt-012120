@@ -1,10 +1,16 @@
-<div class="list-group">
-<h2>Song List</h2>
-<% @artists.each do |artist| %>
+<div class="row">
+	<div class="col-sm-5 offset-sm-3">
+		<div class="list-group">
+		<h2>Artist List</h2>
+		<% @artists.each do |artist| %>
 
-	<a href="/artists/<%= artist.slug %>" class="list-group-item list-group-item-action"><i class="fas fa-microphone-alt mr-2"></i> <%= artist.name %> &mdash; <span class="badge badge-secondary badge-pill"><%= artist.songs.count %></span> songs &mdash; <%= artist.genres.collect {|genre| genre.name.capitalize}.join(", ") %></a>
+			<a href="/artists/<%= artist.slug %>" class="list-group-item list-group-item-action"><i class="fas fa-microphone-alt mr-2"></i> <%= artist.name %> &mdash; <span class="badge badge-secondary badge-pill"><%= artist.songs.count %></span> songs &mdash; <%= artist.genres.collect {|genre| genre.name.capitalize}.join(", ") %></a>
 
-<% end %>
+		<% end %>
 
+		</div>
+	</div>
 </div>
+
+
 
