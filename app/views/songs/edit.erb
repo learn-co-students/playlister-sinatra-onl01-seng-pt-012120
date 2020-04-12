@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-sm-6 offset-sm-3">
+		<h1>Edit Song</h1>
+		<form action="/songs/<%= @song.slug %>" method="POST">
+			<input type="hidden" id="hidden" name="_method" value="PATCH">
+			<div class="form-group">
+				<label for="song_name">Title</label>
+				<input type="text" class="form-control" id="song_name" name="song[name]" value="<%= @song.name %>">
+			</div>
+			<div class="form-group mb-3">
+				<label for="song_artist">Artist</label>
+				<input type="text" class="form-control" id="song_artist" name="song[artist]" value="<%= @song.artist.name %>">
+			</div>
+			<h4 class="" for="">Select Genre(s)</h4>
+
+			<% @genres.each do |genre| %>
+
+				<div class="form-group form-check">
+					<input type="checkbox" class="form-check-input" id="<%= genre.name %>" name="genres[]" value="<%= genre.id %>" <%= 'checked' if @song.genre_ids.include?(genre.id) %>>
+					<label class="form-check-label" for="<%= genre.name %>" ><%= genre.name.capitalize %></label>
+				</div>
+
+			<% end %>
+
+			<input type="submit" class="btn btn-secondary" value="Edit Song">
+		</form>
+	</div>
+</div>
+
