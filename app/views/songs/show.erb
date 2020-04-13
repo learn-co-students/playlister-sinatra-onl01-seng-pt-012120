@@ -1,3 +1,10 @@
+<% if flash.has?(:message) %>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="alert alert-success text-center"><%= flash[:message] %></div>	
+		</div>
+	</div>
+<% end %>
 
 <div class="row">
 	<div class="col-sm-6 offset-sm-3">
