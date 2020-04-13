@@ -12,7 +12,7 @@
 						<h5 class="card-title"><%= @artist.name %></h5>
 						<p class="card-text"><small class="text-muted"> Genre(s) // 
 
-							<% @genre.each do |genre| %>
+							<% @genres.each do |genre| %>
 								<a href="/genres/<%= genre.slug %>"><%= genre.name %></a> 
 							<% end %>
 								
