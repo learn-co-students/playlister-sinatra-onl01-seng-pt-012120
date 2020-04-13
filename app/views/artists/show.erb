@@ -10,7 +10,13 @@
 				<div class="col-md-8">
 					<div class="card-body">
 						<h5 class="card-title"><%= @artist.name %></h5>
-						<p class="card-text"><small class="text-muted"> Genre(s) // <%= @genres.each.collect {|genre| genre.name.capitalize}.join(", ") %></small></p>
+						<p class="card-text"><small class="text-muted"> Genre(s) // 
+
+							<% @genre.each do |genre| %>
+								<a href="/genres/<%= genre.slug %>"><%= genre.name %></a> 
+							<% end %>
+								
+							</small></p>
 						<ul class="list-group list-group-flush">
 							<% @artist.songs.each.with_index(1) do |song, index| %>
 							<li class="list-group-item"><%= index %>. <a href="/songs/<%= song.slug %>"><%= song.name %></a> </li>

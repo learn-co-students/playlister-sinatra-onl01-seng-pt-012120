@@ -4,7 +4,7 @@
 		<h2>Genre List</h2>
 		<% @genres.each do |genre| %>
 
-			<a href="/genres/<%= genre.slug %>" class="list-group-item list-group-item-action"> <%= genre.name.capitalize %> &mdash; <span class="badge badge-secondary badge-pill"><%= genre.songs.count %></span> songs</a>
+			<a href="/genres/<%= genre.slug %>" class="list-group-item list-group-item-action"> <%= genre.name %> &mdash; <span class="badge badge-secondary badge-pill"><%= genre.songs.count %></span> songs</a>
 
 		<% end %>
 
