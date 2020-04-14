@@ -1,0 +1,10 @@
+<div class="row">
+	<div class="col-sm-6 offset-sm-3">
+		<div class="list-group">
+			<h2 class="text-center"><span class="badge badge-pill badge-secondary"><%= @genre.songs.count %></span>&nbsp;<%= @genre.name.capitalize %> Songs</h2>
+			<% @genre.songs.each.with_index(1) do |song, index| %>
+				<a href="/songs/<%= song.slug %>" class="list-group-item list-group-item-action"><span class="badge badge-pill badge-secondary"><%= index %></span> &mdash; "<%= song.name %>" &mdash; <a href="/artists/<%= song.artist.slug %>" class="list-group-item list-group-item-action"><%= song.artist.name %></a> </a>
+			<% end %>
+		</div>
+	</div>
+</div>

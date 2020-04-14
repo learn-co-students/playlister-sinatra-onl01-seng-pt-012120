@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-sm-6 offset-sm-3">
+		<h3>Create Song</h3>
+		<form action="/songs" method="POST">
+			<div class="form-group">
+				<label for="Name">Title</label>
+				<input type="text" class="form-control" id="Name" name="song[name]">
+			</div>
+			<div class="form-group mb-3">
+				<label for="Artist Name">Artist</label>
+				<input type="text" class="form-control" id="Artist Name" name="song[artist]">
+			</div>
+			<h4 class="" for="">Select Genre(s)</h4>
+
+			<% @genres.each do |genre| %>
+
+				<div class="form-group form-check">
+					<input type="checkbox" class="form-check-input" id="<%= genre.name %>" name="genres[]" value="<%= genre.id %>">
+					<label class="form-check-label" for="<%= genre.name %>" ><%= genre.name.capitalize %></label>
+				</div>
+
+			<% end %>
+
+			<input type="submit" class="btn btn-secondary" value="Create Song">
+		</form>
+	</div>
+</div>
+
